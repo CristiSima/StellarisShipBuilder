@@ -1,0 +1,18 @@
+#NOTE: will be saved as Weapon.Small.Lasers.Laser_T1
+CLASS
+
+SHIP_NAME
+
+REACTOR
+HIPERDRIVE
+THRUSTER
+SENSOR
+AI
+*AURA*
+
+SECTION_NAME
+WEAPON1,2,3 UTILITY1,2,3
+.
+.
+.
+.
