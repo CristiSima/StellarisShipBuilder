@@ -12,11 +12,11 @@ class Ship:
         self.Class=Class
         self.FinalHull=self.BaseHull=MaxHull
         self.BaseArmor=0
-        self.BaseShild=0
+        self.BaseShield=0
         self.FinalSpeed=self.BaseSpeed=Speed
         self.FinalEvasion=self.BaseEvasion=Evasion
 
-        self.FinalArmor=self.FinalShild=self.Power=0
+        self.FinalArmor=self.FinalShield=self.Power=0
 
         self.Reactor=Modules.Slot("CR",self)
         self.Sensors=Modules.Slot("CS",self)
