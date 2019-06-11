@@ -35,9 +35,12 @@ class TxtBox:
     def Add(self,c):
         self.txt+=c
         self.draw()
+<<<<<<< HEAD
     def Change2(self,txt):
         self.txt=txt
         self.draw()
+=======
+>>>>>>> refs/remotes/origin/master
     def Pop(self):
         None
         self.txt=self.txt[:-1]
@@ -101,8 +104,11 @@ class InfoBox:
 class TxtBox_AR(TxtBox):
         def __init__(self,txt,poz,size,font_size,background,fontID=0):
             self.txt=txt
+<<<<<<< HEAD
             self.Opoz=poz.copy()
             self.Osize=size.copy()
+=======
+>>>>>>> refs/remotes/origin/master
             self.poz=poz.copy()
             self.poz[0]=poz[0]+size[0]
             #self.poz[1]=poz[1]+size[1]
@@ -113,9 +119,12 @@ class TxtBox_AR(TxtBox):
 
             self.draw()
         def draw(self):
+<<<<<<< HEAD
             self.poz=self.Opoz.copy()
             self.size=self.Osize.copy()
             self.poz[0]=self.poz[0]+self.size[0]
+=======
+>>>>>>> refs/remotes/origin/master
             self.TxtObj=self.font.render(self.txt,True,[0,0,0],[255,255,255])
             self.poz[0]-=self.font.size(self.txt)[0]
             self.size[0]=self.font.size(self.txt)[0]
@@ -132,23 +141,29 @@ class TxtBox_AR(TxtBox):
 class TxtBox_AL(TxtBox):
         def __init__(self,txt,poz,size,font_size,background,fontID=0):
             self.txt=txt
+<<<<<<< HEAD
             self.Opoz=poz.copy()
             self.Osize=size.copy()
             self.poz=poz.copy()
             self.size=size.copy()
 
             #self.poz[1]=poz[1]+size[1]
+=======
             self.poz=poz.copy()
             #self.poz[1]=poz[1]+size[1]
             self.size=size.copy()
+>>>>>>> refs/remotes/origin/master
             self.font_size=font_size
             self.background=background
             self.font=pygame.font.Font("Data/Fonts/"+fonts[fontID],font_size)
 
             self.draw()
         def draw(self):
+<<<<<<< HEAD
             self.size=self.Osize.copy()
             self.poz=self.Opoz.copy()
+=======
+>>>>>>> refs/remotes/origin/master
             self.TxtObj=self.font.render(self.txt,True,[0,0,0],[255,255,255])
             #self.size[0]=self.font.size(txt)[0]
 

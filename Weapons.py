@@ -19,8 +19,11 @@ class Weapon:
         self.PowerCons=PowerCons
         self.Target=None
         self.Wait4=0
+<<<<<<< HEAD
     def Build(self):
         self.Ship.Power-=self.PowerCons 
+=======
+>>>>>>> refs/remotes/origin/master
     def Print(self):
         print(self.Name)
     def GetTarget(self,Targets):

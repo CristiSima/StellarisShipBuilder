@@ -138,9 +138,6 @@ class TxtBox_AL(TxtBox):
             self.size=size.copy()
 
             #self.poz[1]=poz[1]+size[1]
-            self.poz=poz.copy()
-            #self.poz[1]=poz[1]+size[1]
-            self.size=size.copy()
             self.font_size=font_size
             self.background=background
             self.font=pygame.font.Font("Data/Fonts/"+fonts[fontID],font_size)

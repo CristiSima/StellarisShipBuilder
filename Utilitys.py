@@ -13,10 +13,13 @@ class Utility:
         None
     def Effect2(self):
         None
+<<<<<<< HEAD
     def Build(self):
         self.Ship.Power-=self.PowerCons
         self.Effect1()
         self.Effect2()
+=======
+>>>>>>> refs/remotes/origin/master
 class Shield(Utility):
     def __init__(self,Ship,Name,Type,ExtraShield,PowerCons):
         Utility.__init__(self,Ship,Name,Type,PowerCons)

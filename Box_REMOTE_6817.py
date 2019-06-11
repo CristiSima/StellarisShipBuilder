@@ -35,9 +35,6 @@ class TxtBox:
     def Add(self,c):
         self.txt+=c
         self.draw()
-    def Change2(self,txt):
-        self.txt=txt
-        self.draw()
     def Pop(self):
         None
         self.txt=self.txt[:-1]
@@ -101,8 +98,6 @@ class InfoBox:
 class TxtBox_AR(TxtBox):
         def __init__(self,txt,poz,size,font_size,background,fontID=0):
             self.txt=txt
-            self.Opoz=poz.copy()
-            self.Osize=size.copy()
             self.poz=poz.copy()
             self.poz[0]=poz[0]+size[0]
             #self.poz[1]=poz[1]+size[1]
@@ -113,9 +108,6 @@ class TxtBox_AR(TxtBox):
 
             self.draw()
         def draw(self):
-            self.poz=self.Opoz.copy()
-            self.size=self.Osize.copy()
-            self.poz[0]=self.poz[0]+self.size[0]
             self.TxtObj=self.font.render(self.txt,True,[0,0,0],[255,255,255])
             self.poz[0]-=self.font.size(self.txt)[0]
             self.size[0]=self.font.size(self.txt)[0]
@@ -132,12 +124,6 @@ class TxtBox_AR(TxtBox):
 class TxtBox_AL(TxtBox):
         def __init__(self,txt,poz,size,font_size,background,fontID=0):
             self.txt=txt
-            self.Opoz=poz.copy()
-            self.Osize=size.copy()
-            self.poz=poz.copy()
-            self.size=size.copy()
-
-            #self.poz[1]=poz[1]+size[1]
             self.poz=poz.copy()
             #self.poz[1]=poz[1]+size[1]
             self.size=size.copy()
@@ -147,8 +133,6 @@ class TxtBox_AL(TxtBox):
 
             self.draw()
         def draw(self):
-            self.size=self.Osize.copy()
-            self.poz=self.Opoz.copy()
             self.TxtObj=self.font.render(self.txt,True,[0,0,0],[255,255,255])
             #self.size[0]=self.font.size(txt)[0]
 
