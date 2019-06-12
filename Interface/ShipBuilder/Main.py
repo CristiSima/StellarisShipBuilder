@@ -68,26 +68,19 @@ class CorveteBuilder:
 
 
         self.LoadBut=Load=Buttons.FCST.ButtonWtxt(CST.Ship_Builder.CorveteBuilder.LoadButtton,self.Screen)
-<<<<<<< HEAD
+
         but.append(Load)
-=======
-        #but.append(Load)
->>>>>>> refs/remotes/origin/master
 
 
         for B in but:
             B.AddClick(self.Clear,())
         New.AddClick(Corvete.Active,(self.Screen,self.stack))
-<<<<<<< HEAD
         Load.AddClick(LoadCorvete,(self.Screen,self.stack))
-=======
->>>>>>> refs/remotes/origin/master
         self.Screen.draw()
     def Clear(self):
         self.NewBut.Remove()
         self.LoadBut.Remove()
         self.Screen.draw()
-<<<<<<< HEAD
 class LoadCorvete:
     def __init__(self,Screen,stack):
         self.Screen=Screen
@@ -111,5 +104,3 @@ class LoadCorvete:
         self.Title.Remove()
         for B in self.buts:
             B.Remove()
-=======
->>>>>>> refs/remotes/origin/master

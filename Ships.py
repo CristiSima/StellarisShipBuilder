@@ -2,7 +2,7 @@ import Weapons
 import Modules
 import Components
 '''
-Shild,Hull,Armor:
+Shield,Hull,Armor:
     Base=sum(Utility)
     Final=Base
     Final+=Base*(LVL+Auxilary)
@@ -12,19 +12,16 @@ class Ship:
         self.Class=Class
         self.FinalHull=self.BaseHull=MaxHull
         self.BaseArmor=0
-<<<<<<< HEAD
         self.BaseShield=0
         self.FinalSpeed=self.BaseSpeed=Speed
         self.FinalEvasion=self.BaseEvasion=Evasion
 
         self.FinalArmor=self.FinalShield=self.Power=0
-=======
-        self.BaseShild=0
+        self.BaseShield=0
         self.FinalSpeed=self.BaseSpeed=Speed
         self.FinalEvasion=self.BaseEvasion=Evasion
-
-        self.FinalArmor=self.FinalShild=self.Power=0
->>>>>>> refs/remotes/origin/master
+        self.BonusTracking=0
+        self.FinalArmor=self.FinalSheild=self.Power=0
 
         self.Reactor=Modules.Slot("CR",self)
         self.Sensors=Modules.Slot("CS",self)
@@ -33,11 +30,8 @@ class Ship:
         self.AI=Modules.Slot("CAI",self)
         self.Aura=None
         self.Name=""
-<<<<<<< HEAD
         self.Modules=[]
-=======
 
->>>>>>> refs/remotes/origin/master
     def Save(self):
         #Check add
         file=open("Data/Save/Ships/"+self.Class+"/"+"Ships.txt","r")
@@ -87,17 +81,19 @@ class Ship:
         return File
     def SetName(self,Name):
         self.Name=Name
-<<<<<<< HEAD
 
     def Reset(self):
         None
-        self.Armor=0
-        self.Shield=0
+        self.FinalArmor=self.Armor=0
+        self.FinalShield=self.Shield=0
         self.Power=0
+        self.BonusTracking=0
+
         #Overrive AND Call in Class
     OnBuild=None
     def Build(self):
         #Clear
+
         self.Reset()
         #Rebuild
         self.Reactor.Build()
@@ -113,12 +109,6 @@ class Ship:
         if(self.OnBuild):
             self.OnBuild[0](*self.OnBuild[1])
 
-=======
-    def Build(self):
-        #checks if it can be builded
-        # pree save
-        None
->>>>>>> refs/remotes/origin/master
     def Print(self):
         if(self.Name!=""):
             print(self.Name)
@@ -153,7 +143,6 @@ class Ship:
         None
 
 class Corvete(Ship):
-<<<<<<< HEAD
     def __init__(self):#self,Class,MaxHull,Speed,Evasion,ComPoints
         Ship.__init__(self,"Corvete",300,160,60,1)
         self.Core=Modules.Slot("MCC",self)
@@ -164,11 +153,8 @@ class Corvete(Ship):
         self.Hull=300
         self.Speed=160
         self.Evasion=60
-=======
-    def __init__(self):
-        Ship.__init__(self,"Corvete",300,160,60,1)
-        self.Core=Modules.Slot("MCC",self)
->>>>>>> refs/remotes/origin/master
+
+
     def Save(self):
         File=Ship.Save(self)
         self.Core.Save(File)

@@ -102,7 +102,6 @@ if(__name__=="__main__"):
         l.Save()
         B=Buttons.Button(S.M,(50,50),(50,50))
     S.stack=stack=[]
-<<<<<<< HEAD
 
     #Main Menu
     #Interface.Menu.Active(S,stack)
@@ -111,10 +110,6 @@ if(__name__=="__main__"):
     Interface.Menu.SB.Active(S,stack)
 
     #Corvete Design
-=======
-    Interface.Menu.Active(S,stack)
-
->>>>>>> refs/remotes/origin/master
     #Interface.Menu.SB.Corvete.Active(S,stack)
 
 

@@ -1,18 +1,10 @@
 Corvete
 
 
-Components.Reactors.Corvete.Reactor_T1
-Components.Hiperdrives.Hiperdrive_T1
 None
-None
-None
-
-Modules.Corvete.Core.MissileBoat
-None
-Weapons.Explosives.Missiles.Missile_T1
-
 None
 None
 None
 None
 
+None

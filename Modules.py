@@ -94,7 +94,7 @@ class Module:
         print()
         print()
 
-<<<<<<< HEAD
+
     def Build(self):
         if(self.Weapon1):
             self.Weapon1.Build()
@@ -123,8 +123,7 @@ class Module:
             self.Utility6.Build()
 
 
-=======
->>>>>>> refs/remotes/origin/master
+
 class Slot:
     def __init__(self,Type,Ship):
         self.Type=Type
@@ -141,10 +140,8 @@ class Slot:
                 return
             if(self.Type==Thing.Type):
                 self.Thing=Thing(self.Ship)
-<<<<<<< HEAD
                 self.Ship.Build()
-=======
->>>>>>> refs/remotes/origin/master
+
     def Target(self):
         if(self.Type[0]=="W"):
             if(self.Type[1]=="S"):
@@ -163,6 +160,7 @@ class Slot:
         print("ERRRROR")
         print("ERRRROR")
         print("ERRRROR")
+
     def Save(self,File):
         '''
         if(self.Type[0]=='M'):
@@ -192,12 +190,9 @@ class Slot:
         self.Equip(eval(File.readline()[:-1]))
         if(self.Thing   and  self.Type[0]=="M"):
             self.Thing.Load(File)
-<<<<<<< HEAD
     def Build(self):
         if(self.Thing):
             self.Thing.Build()
-=======
->>>>>>> refs/remotes/origin/master
 class Corvete:
     class Core:
         class Interceptor(Module):
@@ -206,7 +201,6 @@ class Corvete:
             Info=["Weapons: 3S","Utility: 3S 1A"]
             def __init__(self,Ship):
                 Module.__init__(self,"MCC","Interceptor",Ship)
-<<<<<<< HEAD
                 self.Weapon1=Slot("WS",Ship)
                 self.Weapon2=Slot("WS",Ship)
                 self.Weapon3=Slot("WS",Ship)
@@ -215,23 +209,13 @@ class Corvete:
                 self.Utility2=Slot("US",Ship)
                 self.Utility3=Slot("US",Ship)
                 self.Utility4=Slot("UA",Ship)
-=======
-                self.Weapon1=Slot("WS",self)
-                self.Weapon2=Slot("WS",self)
-                self.Weapon3=Slot("WS",self)
 
-                self.Utility1=Slot("US",self)
-                self.Utility2=Slot("US",self)
-                self.Utility3=Slot("US",self)
-                self.Utility4=Slot("UA",self)
->>>>>>> refs/remotes/origin/master
         class MissileBoat(Module):
             Type="MCC"
             Name="Missile Boat"
             Info=["Weapons: 1S 1G","Utility: 3S 1A"]
             def __init__(self,Ship):
                 Module.__init__(self,"MCC","Missile Boat",Ship)
-<<<<<<< HEAD
                 self.Weapon1=Slot("WS",Ship)
                 self.Weapon2=Slot("WG",Ship)
 
@@ -239,22 +223,13 @@ class Corvete:
                 self.Utility2=Slot("US",Ship)
                 self.Utility3=Slot("US",Ship)
                 self.Utility4=Slot("UA",Ship)
-=======
-                self.Weapon1=Slot("WS",self)
-                self.Weapon2=Slot("WG",self)
 
-                self.Utility1=Slot("US",self)
-                self.Utility2=Slot("US",self)
-                self.Utility3=Slot("US",self)
-                self.Utility4=Slot("UA",self)
->>>>>>> refs/remotes/origin/master
         class PicketShip(Module):
             Type="MCC"
             Name="Picket Ship"
             Info=["Weapons: 2S 1P","Utility: 3S 1A"]
             def __init__(self,Ship):
                 Module.__init__(self,"MCC","Picket Ship",Ship)
-<<<<<<< HEAD
                 self.Weapon1=Slot("WS",Ship)
                 self.Weapon2=Slot("WS",Ship)
                 self.Weapon3=Slot("WP",Ship)
@@ -263,16 +238,7 @@ class Corvete:
                 self.Utility2=Slot("US",Ship)
                 self.Utility3=Slot("US",Ship)
                 self.Utility4=Slot("UA",Ship)
-=======
-                self.Weapon1=Slot("WS",self)
-                self.Weapon2=Slot("WS",self)
-                self.Weapon3=Slot("WP",self)
 
-                self.Utility1=Slot("US",self)
-                self.Utility2=Slot("US",self)
-                self.Utility3=Slot("US",self)
-                self.Utility4=Slot("UA",self)
->>>>>>> refs/remotes/origin/master
         Variants=[Interceptor,MissileBoat,PicketShip]
 if(__loader__!="Modules"):
     import Modules

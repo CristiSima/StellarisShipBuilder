@@ -78,7 +78,6 @@ class Module:
         else:
             None
     def UpdateColor(self):
-<<<<<<< HEAD
         if(self.Comp.Thing):
             if(self.Comp.Thing.Weapon1):
                 self.Weapon1.Change2([255,255,255])
@@ -140,68 +139,6 @@ class Module:
                 self.Utility6.Change2([255,255,255])
             else:
                 self.Utility6.Change2([100,100,100])
-=======
-        if(self.Comp.Thing.Weapon1):
-            self.Weapon1.Change2([255,255,255])
-        else:
-            self.Weapon1.Change2([100,100,100])
-
-        if(self.Comp.Thing.Weapon2):
-            self.Weapon2.Change2([255,255,255])
-        else:
-            self.Weapon2.Change2([100,100,100])
-
-        if(self.Comp.Thing.Weapon3):
-            self.Weapon3.Change2([255,255,255])
-        else:
-            self.Weapon3.Change2([100,100,100])
-
-        if(self.Comp.Thing.Weapon4):
-            self.Weapon4.Change2([255,255,255])
-        else:
-            self.Weapon4.Change2([100,100,100])
-
-        if(self.Comp.Thing.Weapon5):
-            self.Weapon5.Change2([255,255,255])
-        else:
-            self.Weapon5.Change2([100,100,100])
-
-        if(self.Comp.Thing.Weapon6):
-            self.Weapon6.Change2([255,255,255])
-        else:
-            self.Weapon6.Change2([100,100,100])
-
-
-        if(self.Comp.Thing.Utility1):
-            self.Utility1.Change2([255,255,255])
-        else:
-            self.Utility1.Change2([100,100,100])
-
-        if(self.Comp.Thing.Utility2):
-            self.Utility2.Change2([255,255,255])
-        else:
-            self.Utility2.Change2([100,100,100])
-
-        if(self.Comp.Thing.Utility3):
-            self.Utility3.Change2([255,255,255])
-        else:
-            self.Utility3.Change2([100,100,100])
-
-        if(self.Comp.Thing.Utility4):
-            self.Utility4.Change2([255,255,255])
-        else:
-            self.Utility4.Change2([100,100,100])
-
-        if(self.Comp.Thing.Utility5):
-            self.Utility5.Change2([255,255,255])
-        else:
-            self.Utility5.Change2([100,100,100])
-
-        if(self.Comp.Thing.Utility6):
-            self.Utility6.Change2([255,255,255])
-        else:
-            self.Utility6.Change2([100,100,100])
->>>>>>> refs/remotes/origin/master
 
     def __init__(self,Screen,of,Comp,InfoPanel):
         self.Comp=Comp
@@ -223,7 +160,7 @@ class Module:
         self.Weapon6=Buttons.ButtonWsqr([of[0]+136,of[1]+108],[64,64],Screen,[100,100,100])
         self.Weapon6.AddClick(self.CheckAdd,("Weapon6",))
 
-<<<<<<< HEAD
+
         self.Utility1=Buttons.ButtonWsqr([of[0]+0,of[1]+518],[64,64],Screen,[100,100,100])
         self.Utility1.AddClick(self.CheckAdd,("Utility1",))
         self.Utility2=Buttons.ButtonWsqr([of[0]+68,of[1]+518],[64,64],Screen,[100,100,100])
@@ -238,21 +175,6 @@ class Module:
         self.Utility6.AddClick(self.CheckAdd,("Utility6",))
 
         self.UpdateColor()
-=======
-        self.Utility1=Buttons.ButtonWsqr([of[0]+0,of[1]+450],[64,64],Screen,[100,100,100])
-        self.Utility1.AddClick(self.CheckAdd,("Utility1",))
-        self.Utility2=Buttons.ButtonWsqr([of[0]+68,of[1]+450],[64,64],Screen,[100,100,100])
-        self.Utility2.AddClick(self.CheckAdd,("Utility2",))
-        self.Utility3=Buttons.ButtonWsqr([of[0]+136,of[1]+450],[64,64],Screen,[100,100,100])
-        self.Utility3.AddClick(self.CheckAdd,("Utility3",))
-        self.Utility4=Buttons.ButtonWsqr([of[0]+0,of[1]+518],[64,64],Screen,[100,100,100])
-        self.Utility4.AddClick(self.CheckAdd,("Utility4",))
-        self.Utility5=Buttons.ButtonWsqr([of[0]+68,of[1]+518],[64,64],Screen,[100,100,100])
-        self.Utility5.AddClick(self.CheckAdd,("Utility5",))
-        self.Utility6=Buttons.ButtonWsqr([of[0]+136,of[1]+518],[64,64],Screen,[100,100,100])
-        self.Utility6.AddClick(self.CheckAdd,("Utility6",))
-
->>>>>>> refs/remotes/origin/master
         Screen.draw()
     def Clear(self):
         self.Name.Remove()
@@ -275,14 +197,15 @@ class General:
         self.Screen=Screen
         self.stack=stack
         stack.append(self)
+    def SetName(self):
+        self.Ship.SetName(self.Name.txt.txt)
     def Show(self):
         self.Info=Box.FCST.InfoBox(CST.DesignerGeneral.InfoBar.InfoPanel,self.Screen)
 
         self.Save=Buttons.FCST.ButtonWtxt(CST.DesignerGeneral.InfoBar.SaveBut,self.Screen)
-<<<<<<< HEAD
+        self.Save.AddClick(self.SetName,())
         self.Save.AddClick(self.Ship.Save,())
-=======
->>>>>>> refs/remotes/origin/master
+
         self.Cost=[Box.FCST.TxtBox_AL(CST.DesignerGeneral.InfoBar.Cost.L,self.Screen.background),
               Box.FCST.TxtBox_AR(CST.DesignerGeneral.InfoBar.Cost.R,self.Screen.background)]
         self.Power=[Box.FCST.TxtBox_AL(CST.DesignerGeneral.InfoBar.Power.L,self.Screen.background),
@@ -297,11 +220,10 @@ class General:
               Box.FCST.TxtBox_AR(CST.DesignerGeneral.InfoBar.Evasion.R,self.Screen.background)]
 
         self.Name=Buttons.FCST.InBox(CST.DesignerGeneral.InfoBar.NameBox,self.Screen)
-<<<<<<< HEAD
         self.Name.txt.Change2(self.Ship.Name)
-=======
 
->>>>>>> refs/remotes/origin/master
+
+
         self.Reactor=Buttons.FCST.ButtonWsqr(CST.DesignerGeneral.Components.Reactor,self.Screen)
         self.Hiperdrive=Buttons.FCST.ButtonWsqr(CST.DesignerGeneral.Components.Hiperdrive,self.Screen)
         self.Thrusters=Buttons.FCST.ButtonWsqr(CST.DesignerGeneral.Components.Thrusters,self.Screen)
@@ -310,20 +232,19 @@ class General:
 
         ## # TODO:  MOVE TO Titan CLASS
         ## self.Aura=Buttons.FCST.ButtonWsqr(CST.DesignerGeneral.Components.Aura,self.Screen)
-<<<<<<< HEAD
+
     def UpdateInfo(self):
         self.Power[0].draw()
         self.Power[1].Change2(str(self.Ship.Power))
         self.Hull[0].draw()
-        self.Hull[1].Change2(str(self.Ship.Hull))
+        self.Hull[1].Change2(str(self.Ship.FinalHull))
         self.Armor[0].draw()
-        self.Armor[1].Change2(str(self.Ship.Armor))
+        self.Armor[1].Change2(str(self.Ship.FinalArmor))
         self.Shield[0].draw()
-        self.Shield[1].Change2(str(self.Ship.Shield))
+        self.Shield[1].Change2(str(self.Ship.FinalShield))
         self.Evasion[0].draw()
-        self.Evasion[1].Change2(str(self.Ship.Evasion))
-=======
->>>>>>> refs/remotes/origin/master
+        self.Evasion[1].Change2(str(self.Ship.FinalEvasion))
+        self.Screen.draw()
     def Clear(self):
         None
         self.Save.Remove()
@@ -354,7 +275,6 @@ class General:
         self.Sensors.Remove()
         self.AI.Remove()
 class Active(General):
-<<<<<<< HEAD
     def __init__(self,Screen,stack,Ship=None):
         if(Ship):
             self.Ship=Ships.Corvete.Load(Ship+".txt")
@@ -363,11 +283,6 @@ class Active(General):
             self.Ship=Ships.Corvete()
         General.__init__(self,Screen,stack)
         self.Ship.OnBuild=(self.UpdateInfo,())
-=======
-    def __init__(self,Screen,stack):
-        General.__init__(self,Screen,stack)
->>>>>>> refs/remotes/origin/master
-        None
         self.Show()
     def SetBut(self):
         self.Reactor.AddClick(Thing_Selector,(self.Screen,self.Ship.Reactor,Ships.Components.Reactors.Corvete,self.Info))
@@ -382,10 +297,6 @@ class Active(General):
         None
         General.Show(self)
 
-<<<<<<< HEAD
-=======
-        self.Ship=Ships.Corvete()
->>>>>>> refs/remotes/origin/master
         self.SetBut()
         #self.Core=Module(self.Screen,CST.DesignerGeneral.of_M,Ships.Modules.Slot("MCC",self.Ship))
         self.Core=Module(self.Screen,CST.DesignerGeneral.of_M,self.Ship.Core,self.Info)
@@ -396,19 +307,16 @@ class Active(General):
         #self.Core.Comp.Equip(Ships.Modules.Corvete.Core.Interceptor)
         #Type_Selector(self.Screen,self.Core.Comp.Thing.Weapon1,Ships.Weapons.Small,self.Info)
 
-        self.Screen.draw()
         #self.Selectore.Remove()
-
+        self.UpdateInfo()
         self.Screen.draw()
     def Clear(self):
         self.Ship.SetName(self.Name.txt.txt)
         self.Ship.Print()
-<<<<<<< HEAD
+
 
         #print(self.Ship.Power)
 
-=======
->>>>>>> refs/remotes/origin/master
         General.Clear(self)
         self.Core.Clear()
         self.Info.Remove()

@@ -49,13 +49,8 @@ class Thruster(Component):
         self.SpeedMod=SpeedMod
         self.EvasionExtra=EvasionExtra
     def Effect1(self):
-<<<<<<< HEAD
         self.Ship.FinalSpeed+=self.Ship.Speed*self.SpeedMod
         self.Ship.FinalEvasion+=self.EvasionExtra
-=======
-        self.Ship.ExtraSpeed+=self.Ship.Speed*self.SpeedMod
-        self.Ship.ExtraEvasion+=self.EvasionExtra
->>>>>>> refs/remotes/origin/master
 
 class Thrusters:
     class Corvete:
@@ -71,13 +66,10 @@ class Sensor(Component):
         Component.__init__(self,"CS",Name,PowerCons,Ship)
         self.ExtraTracking=ExtraTracking
     def Effect1(self):
-<<<<<<< HEAD
         #Global Modifier
         #self.Ship.FinalTracking+=self.ExtraTracking
         None
-=======
-        self.Ship.FinalTracking+=self.ExtraTracking
->>>>>>> refs/remotes/origin/master
+        self.Ship.BonusTracking+=self.ExtraTracking
 class Sensors:
     class Sensor_T1(Sensor):
         Type="CS"
