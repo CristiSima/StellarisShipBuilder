@@ -8,13 +8,14 @@ Shield,Hull,Armor:
     Final+=Base*(LVL+Auxilary)
 '''
 class Ship:
-    def __init__(self,Class,MaxHull,Speed,Evasion,ComPoints):
+    def __init__(self,Class,MaxHull,Speed,Evasion,ComPoints,Cost):
         self.Class=Class
-        self.FinalHull=self.BaseHull=MaxHull
-        self.BaseArmor=0
         self.BaseShield=0
+        self.BaseArmor=0
+        self.FinalHull=self.BaseHull=MaxHull
         self.FinalSpeed=self.BaseSpeed=Speed
         self.FinalEvasion=self.BaseEvasion=Evasion
+        self.FinalCost=self.BaseCost=Cost
 
         self.FinalArmor=self.FinalShield=self.Power=0
         self.BaseShield=0
@@ -84,6 +85,12 @@ class Ship:
 
     def Reset(self):
         None
+        self.FinalHull=self.BaseHull
+        self.FinalSpeed=self.BaseSpeed
+        self.FinalEvasion=self.BaseEvasion
+
+        self.FinalCost=self.BaseCost
+
         self.FinalArmor=self.Armor=0
         self.FinalShield=self.Shield=0
         self.Power=0
@@ -144,16 +151,15 @@ class Ship:
 
 class Corvete(Ship):
     def __init__(self):#self,Class,MaxHull,Speed,Evasion,ComPoints
-        Ship.__init__(self,"Corvete",300,160,60,1)
+        Ship.__init__(self,"Corvete",300,160,60,1,30)
         self.Core=Modules.Slot("MCC",self)
         self.Modules.append(self.Core)
 
-    def Reset(self):
-        Ship.Reset(self)
-        self.Hull=300
-        self.Speed=160
-        self.Evasion=60
-
+    ##def Reset(self):
+    ##    Ship.Reset(self)
+    ##    self.Hull=300
+    ##    self.Speed=160
+    ##    self.Evasion=60
 
     def Save(self):
         File=Ship.Save(self)
@@ -171,3 +177,117 @@ class Corvete(Ship):
         Ship.Print(self)
         print()
         self.Core.Print()
+
+
+class Destroyer(Ship):
+    def __init__(self):#self,Class,MaxHull,Speed,Evasion,ComPoints
+        Ship.__init__(self,"Destroyer",800,140,35,2,60)
+        self.Bow=Modules.Slot("MDB",self)
+        self.Stern=Modules.Slot("MDS",self)
+        self.Modules.append(self.Bow)
+        self.Modules.append(self.Stern)
+
+    def Reset(self):
+        Ship.Reset(self)
+        self.Hull=800
+        self.Speed=140
+        self.Evasion=35
+
+    def Save(self):
+        File=Ship.Save(self)
+        self.Bow.Save(File)
+        self.Stern.Save(File)
+        File.close()
+
+    def Load(File_Name):
+        File=open("Data/Save/Ships/Destroyer/"+File_Name,"r")
+        #print(File)
+        S=Destroyer()
+        Ship.Load(S,File)
+        S.Bow.Load(File)
+        S.Stern.Load(File)
+        return S
+    def Print(self):
+        Ship.Print(self)
+        print()
+        self.Bow.Print()
+        self.Stern.Print()
+
+
+class Cruiser(Ship):
+    def __init__(self):#self,Class,MaxHull,Speed,Evasion,ComPoints
+        Ship.__init__(self,"Cruiser",1800,120,10,4,120)
+        self.Bow=Modules.Slot("MCB",self)
+        self.Core=Modules.Slot("MCC",self)
+        self.Stern=Modules.Slot("MCS",self)
+        self.Modules.append(self.Bow)
+        self.Modules.append(self.Core)
+        self.Modules.append(self.Stern)
+
+    def Reset(self):
+        Ship.Reset(self)
+        self.Hull=1800
+        self.Speed=120
+        self.Evasion=10
+
+    def Save(self):
+        File=Ship.Save(self)
+        self.Bow.Save(File)
+        self.Core.Save(File)
+        self.Stern.Save(File)
+        File.close()
+
+    def Load(File_Name):
+        File=open("Data/Save/Ships/Cruiser/"+File_Name,"r")
+        #print(File)
+        S=Cruiser()
+        Ship.Load(S,File)
+        S.Bow.Load(File)
+        S.Core.Load(File)
+        S.Stern.Load(File)
+        return S
+    def Print(self):
+        Ship.Print(self)
+        print()
+        self.Bow.Print()
+        self.Core.Print()
+        self.Stern.Print()
+
+class Battleship(Ship):
+    def __init__(self):#self,Class,MaxHull,Speed,Evasion,ComPoints
+        Ship.__init__(self,"Battleship",3000,100,5,8,240)
+        self.Bow=Modules.Slot("MBB",self)
+        self.Core=Modules.Slot("MBC",self)
+        self.Stern=Modules.Slot("MBS",self)
+        self.Modules.append(self.Bow)
+        self.Modules.append(self.Core)
+        self.Modules.append(self.Stern)
+
+    def Reset(self):
+        Ship.Reset(self)
+        self.Hull=3000
+        self.Speed=100
+        self.Evasion=5
+
+    def Save(self):
+        File=Ship.Save(self)
+        self.Bow.Save(File)
+        self.Core.Save(File)
+        self.Stern.Save(File)
+        File.close()
+
+    def Load(File_Name):
+        File=open("Data/Save/Ships/Battleship/"+File_Name,"r")
+        #print(File)
+        S=Battleship()
+        Ship.Load(S,File)
+        S.Bow.Load(File)
+        S.Core.Load(File)
+        S.Stern.Load(File)
+        return S
+    def Print(self):
+        Ship.Print(self)
+        print()
+        self.Bow.Print()
+        self.Core.Print()
+        self.Stern.Print()

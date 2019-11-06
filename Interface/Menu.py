@@ -3,7 +3,6 @@ import Box
 import Buttons
 import Constants as CST
 import Interface.ShipBuilder.Main as SB
-
 class Active:
     def __init__(self,Screen,stack):
         self.Screen=Screen

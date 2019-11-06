@@ -86,10 +86,51 @@ class Ship_Builder:
             size=[500,100]
             poz=[temp,350]## will change to be center
             font_size=35
-            txt="Load Existing Corvete"
+            txt="Load existing Corvete"
             fontID=0
         None
-
+    class DestroyerBuilder:
+        class NewButtton:
+            size=[500,100]
+            poz=[temp,150]## will change to be center
+            font_size=35
+            txt="Design new Destroyer"
+            fontID=0
+        class LoadButtton:
+            size=[500,100]
+            poz=[temp,350]## will change to be center
+            font_size=35
+            txt="Load existing Destroyer"
+            fontID=0
+        None
+    class CruiserBuilder:
+        class NewButtton:
+            size=[500,100]
+            poz=[temp,150]## will change to be center
+            font_size=35
+            txt="Design new Cruiser"
+            fontID=0
+        class LoadButtton:
+            size=[500,100]
+            poz=[temp,350]## will change to be center
+            font_size=35
+            txt="Load existing Cruiser"
+            fontID=0
+        None
+    class BattleshipBuilder:
+        class NewButtton:
+            size=[500,100]
+            poz=[temp,150]## will change to be center
+            font_size=35
+            txt="Design new Battleship"
+            fontID=0
+        class LoadButtton:
+            size=[500,100]
+            poz=[temp,350]## will change to be center
+            font_size=35
+            txt="Load existing Battleship"
+            fontID=0
+        None
 Ship_Builder.ClassSelector.SellectClass.poz[0]=(Window_With-Ship_Builder.ClassSelector.SellectClass.size[0])//2
 Ship_Builder.ClassSelector.SellectCorvete.poz[0]=(Window_With-Ship_Builder.ClassSelector.SellectCorvete.size[0])//2
 Ship_Builder.ClassSelector.SellectDestroyer.poz[0]=(Window_With-Ship_Builder.ClassSelector.SellectDestroyer.size[0])//2
@@ -98,6 +139,13 @@ Ship_Builder.ClassSelector.SellectBattleship.poz[0]=(Window_With-Ship_Builder.Cl
 Ship_Builder.ClassSelector.SellectTitan.poz[0]=(Window_With-Ship_Builder.ClassSelector.SellectTitan.size[0])//2
 Ship_Builder.CorveteBuilder.NewButtton.poz[0]=(Window_With-Ship_Builder.CorveteBuilder.NewButtton.size[0])//2
 Ship_Builder.CorveteBuilder.LoadButtton.poz[0]=(Window_With-Ship_Builder.CorveteBuilder.LoadButtton.size[0])//2
+Ship_Builder.DestroyerBuilder.NewButtton.poz[0]=(Window_With-Ship_Builder.DestroyerBuilder.NewButtton.size[0])//2
+Ship_Builder.DestroyerBuilder.LoadButtton.poz[0]=(Window_With-Ship_Builder.DestroyerBuilder.LoadButtton.size[0])//2
+Ship_Builder.CruiserBuilder.NewButtton.poz[0]=(Window_With-Ship_Builder.CruiserBuilder.NewButtton.size[0])//2
+Ship_Builder.CruiserBuilder.LoadButtton.poz[0]=(Window_With-Ship_Builder.CruiserBuilder.LoadButtton.size[0])//2
+Ship_Builder.BattleshipBuilder.NewButtton.poz[0]=(Window_With-Ship_Builder.BattleshipBuilder.NewButtton.size[0])//2
+Ship_Builder.BattleshipBuilder.LoadButtton.poz[0]=(Window_With-Ship_Builder.BattleshipBuilder.LoadButtton.size[0])//2
+
 class DesignerGeneral:
     of_L=[50,10]
     of_M=[265,10]
@@ -121,67 +169,80 @@ class DesignerGeneral:
         class Cost:
             class L:#txt
                 size=[193,40]
-                poz=[800,250]
+                poz=[800,220]
                 font_size=20
                 txt="Cost:"
                 fontID=1
             class R:#Val
                 size=[193,40]
-                poz=[800,250]
+                poz=[800,220]
                 font_size=20
                 txt="22"
                 fontID=1
         class Power:
             class L:#txt
                 size=[193,40]
-                poz=[800,280]
+                poz=[800,250]
                 font_size=20
                 txt="Power:"
                 fontID=1
             class R:#Val
                 size=[193,40]
-                poz=[800,280]
+                poz=[800,250]
                 font_size=20
                 txt="5"
                 fontID=1
         class Hull:
             class L:#txt
                 size=[193,40]
-                poz=[800,310]
+                poz=[800,280]
                 font_size=20
                 txt="Hull:"
                 fontID=1
             class R:#Val
                 size=[193,40]
-                poz=[800,310]
+                poz=[800,280]
                 font_size=20
                 txt="300"
                 fontID=1
         class Armor:
             class L:#txt
                 size=[193,40]
-                poz=[800,340]
+                poz=[800,310]
                 font_size=20
                 txt="Armor:"
                 fontID=1
             class R:#Val
                 size=[193,40]
-                poz=[800,340]
+                poz=[800,310]
                 font_size=20
                 txt="200"
                 fontID=1
         class Shield:
             class L:#txt
                 size=[193,40]
-                poz=[800,370]
+                poz=[800,340]
                 font_size=20
                 txt="Shield:"
                 fontID=1
             class R:#Val
                 size=[193,40]
-                poz=[800,370]
+                poz=[800,340]
                 font_size=20
                 txt="150"
+                fontID=1
+        class Speed:
+            class L:#txt
+                size=[193,40]
+                poz=[800,370]
+                font_size=20
+                txt="Speed:"
+                fontID=1
+            class R:#Val
+                size=[193,40]
+                poz=[800,370]
+                font_size=20
+                txt="999"
                 fontID=1
         class Evasion:
             class L:#txt

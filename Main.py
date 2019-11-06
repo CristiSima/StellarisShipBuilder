@@ -1,6 +1,7 @@
 import pygame
 import Constants
 import sys
+import os
 import math
 import Buttons
 import Weapons
@@ -25,6 +26,7 @@ class Screen:
         self.W=W
         self.H=H
         self.M=None
+        self.Clean=None#(function,param) to call in order to clean the ui
         self.TxtBox=None
         self.EmptyBut=Buttons.Button(self,(0,0),(0,0))
         self.M=matrix(W+1,H+1,self.EmptyBut)
@@ -67,6 +69,7 @@ class Screen:
 
                 else:
                     if(event.key==27):
+                        os.system("rm -f *.pyc")
                         sys.exit()
                     if(event.key==8):
                         if(len(self.stack)!=1):
@@ -104,10 +107,10 @@ if(__name__=="__main__"):
     S.stack=stack=[]
 
     #Main Menu
-    #Interface.Menu.Active(S,stack)
+    Interface.Menu.Active(S,stack)
 
     #Ship Design
-    Interface.Menu.SB.Active(S,stack)
+    #Interface.Menu.SB.Active(S,stack)
 
     #Corvete Design
     #Interface.Menu.SB.Corvete.Active(S,stack)

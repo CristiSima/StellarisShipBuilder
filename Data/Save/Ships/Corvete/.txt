@@ -7,4 +7,12 @@ None
 None
 None
 
+Modules.Corvete.Core.MissileBoat
+Weapons.Small.Lasers.Laser_T1
+Weapons.Explosives.Missiles.Missile_T1
+
 None
+None
+None
+Utilitys.Auxilary.ReactorBoost.ReactorBoost_T1
+
